@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İl Teşkilatlarımız | Yeniden Umut Partisi</title>
+    <meta name="description" content="Yeniden Umut Partisi resmi web sitesi. Demokratik, katılımcı ve çözüm odaklı kurumsal siyaset.">
+    
+    <!-- SEO & Open Graph -->
+    <meta property="og:title" content="İl Teşkilatlarımız | Yeniden Umut Partisi">
+    <meta property="og:description" content="Yeniden Umut Partisi resmi web sitesi. Demokratik, katılımcı ve çözüm odaklı kurumsal siyaset.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yenidenumutpartisi.org.tr/">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts (Inter & Roboto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar d-none d-md-block">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <i class="fas fa-map-marker-alt me-2 text-warning"></i> BALGAT MAH.CEYHUN ATUF KANSU CAD.NO: 36/6 ÇANKAYA / ANKARA            </div>
+            <div class="col-md-6 text-end">
+                <a href="tel:05339219868" class="me-3"><i class="fas fa-phone me-1"></i> 0533 921 98 68</a>
+                <a href="mailto:info@yenidenumutpartisi.org"><i class="fas fa-envelope me-1"></i> info@yenidenumutpartisi.org</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Navbar -->
+<nav class="navbar navbar-expand-lg main-navbar sticky-top">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="index.php">
+            <img src="assets/images/logo.png" alt="Yeniden Umut Partisi Logosu" class="navbar-logo">
+        </a>
+
+        <!-- Hamburger Menu -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Menüyü Aç">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="mainMenu">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php">Anasayfa</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="kurumsalDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Kurumsal
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="kurumsalDropdown">
+                        <li><a class="dropdown-item" href="kurumsal.php">Hakkımızda</a></li>
+                        <li><a class="dropdown-item" href="vizyon-misyon.php">Vizyon & Misyon</a></li>
+                        <li><a class="dropdown-item" href="tuzuk.php">Parti Tüzüğü</a></li>
+                        <li><a class="dropdown-item" href="program.php">Parti Programı</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="baskanliklar.php">Başkanlıklar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="haberler.php">Haberler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="galeri.php">Galeri</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="iller.php">İl Teşkilatlarımız</a>
+                </li>
+            </ul>
+            <div class="d-flex ms-lg-3 mt-3 mt-lg-0">
+                <a href="iletisim.php" class="btn btn-yup w-100">İletişim</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- JQVMap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
+
+<style>
+    .jqvmap-zoomin, .jqvmap-zoomout { width: 20px; height: 20px; }
+    .turkey-map-container { height: 450px; position: relative; }
+    #vmap { width: 100%; height: 100%; }
+</style>
+
+<!-- ================= PAGE BANNER ================= -->
+<div class="page-banner text-center" style="background-color: var(--yup-darker);">
+    <div class="container">
+        <h1 class="text-uppercase fw-bold text-white mb-2">Türkiye Teşkilatları</h1>
+        <p class="mt-2 text-white opacity-75">81 İlde, Yeniden Umut İçin Sizinleyiz</p>
+    </div>
+</div>
+
+<div class="container py-100">
+    <div class="row">
+        <!-- Türkiye Haritası -->
+        <div class="col-lg-8 mb-5 mb-lg-0">
+            <h3 class="fw-bold text-uppercase mb-4 text-center text-yup-dark">İl Teşkilatlarımız (İnteraktif Harita)</h3>
+            <div class="turkey-map-container shadow-sm border rounded bg-light p-3">
+                <div id="vmap"></div>
+                <div class="text-center text-muted small mt-2">İl teşkilatını görüntülemek için haritadan bir il seçin.</div>
+            </div>
+        </div>
+
+        <!-- İl Arama ve Sonuç Listesi -->
+        <div class="col-lg-4">
+            <div class="bg-light p-4 rounded shadow-sm border mb-4">
+                <h4 class="h5 fw-bold mb-3">İl Seçiniz</h4>
+                <select class="form-select form-select-lg mb-3" id="provinceSelect">
+                    <option value="">İl Seçerek Filtreleyin</option>
+                                        <option value="1">Adana</option>
+                                        <option value="2">Adıyaman</option>
+                                        <option value="3">Afyonkarahisar</option>
+                                        <option value="4">Ağrı</option>
+                                        <option value="68">Aksaray</option>
+                                        <option value="5">Amasya</option>
+                                        <option value="6">Ankara</option>
+                                        <option value="7">Antalya</option>
+                                        <option value="75">Ardahan</option>
+                                        <option value="8">Artvin</option>
+                                        <option value="9">Aydın</option>
+                                        <option value="10">Balıkesir</option>
+                                        <option value="74">Bartın</option>
+                                        <option value="72">Batman</option>
+                                        <option value="69">Bayburt</option>
+                                        <option value="11">Bilecik</option>
+                                        <option value="12">Bingöl</option>
+                                        <option value="13">Bitlis</option>
+                                        <option value="14">Bolu</option>
+                                        <option value="15">Burdur</option>
+                                        <option value="16">Bursa</option>
+                                        <option value="17">Çanakkale</option>
+                                        <option value="18">Çankırı</option>
+                                        <option value="19">Çorum</option>
+                                        <option value="20">Denizli</option>
+                                        <option value="21">Diyarbakır</option>
+                                        <option value="81">Düzce</option>
+                                        <option value="22">Edirne</option>
+                                        <option value="23">Elazığ</option>
+                                        <option value="24">Erzincan</option>
+                                        <option value="25">Erzurum</option>
+                                        <option value="26">Eskişehir</option>
+                                        <option value="27">Gaziantep</option>
+                                        <option value="28">Giresun</option>
+                                        <option value="29">Gümüşhane</option>
+                                        <option value="30">Hakkari</option>
+                                        <option value="31">Hatay</option>
+                                        <option value="76">Iğdır</option>
+                                        <option value="32">Isparta</option>
+                                        <option value="34">İstanbul</option>
+                                        <option value="35">İzmir</option>
+                                        <option value="46">Kahramanmaraş</option>
+                                        <option value="78">Karabük</option>
+                                        <option value="70">Karaman</option>
+                                        <option value="36">Kars</option>
+                                        <option value="37">Kastamonu</option>
+                                        <option value="38">Kayseri</option>
+                                        <option value="79">Kilis</option>
+                                        <option value="71">Kırıkkale</option>
+                                        <option value="39">Kırklareli</option>
+                                        <option value="40">Kırşehir</option>
+                                        <option value="41">Kocaeli</option>
+                                        <option value="42">Konya</option>
+                                        <option value="43">Kütahya</option>
+                                        <option value="44">Malatya</option>
+                                        <option value="45">Manisa</option>
+                                        <option value="47">Mardin</option>
+                                        <option value="33">Mersin</option>
+                                        <option value="48">Muğla</option>
+                                        <option value="49">Muş</option>
+                                        <option value="50">Nevşehir</option>
+                                        <option value="51">Niğde</option>
+                                        <option value="52">Ordu</option>
+                                        <option value="80">Osmaniye</option>
+                                        <option value="53">Rize</option>
+                                        <option value="54">Sakarya</option>
+                                        <option value="55">Samsun</option>
+                                        <option value="63">Şanlıurfa</option>
+                                        <option value="56">Siirt</option>
+                                        <option value="57">Sinop</option>
+                                        <option value="73">Şırnak</option>
+                                        <option value="58">Sivas</option>
+                                        <option value="59">Tekirdağ</option>
+                                        <option value="60">Tokat</option>
+                                        <option value="61">Trabzon</option>
+                                        <option value="62">Tunceli</option>
+                                        <option value="64">Uşak</option>
+                                        <option value="65">Van</option>
+                                        <option value="77">Yalova</option>
+                                        <option value="66">Yozgat</option>
+                                        <option value="67">Zonguldak</option>
+                                    </select>
+                <button class="btn btn-yup w-100" id="btnFindProvince">Teşkilat Bul</button>
+            </div>
+
+            <div class="province-results" id="provinceResultContainer">
+                <h5 class="fw-bold text-uppercase mb-3 mt-4 text-muted">Arama Sonucu</h5>
+                
+                <div id="provinceCard" class="card border mb-3" style="display: none;">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-map-marker-alt text-primary fs-3 me-3"></i>
+                            <h5 class="card-title fw-bold text-uppercase mb-0" id="pCardName">İl Adı</h5>
+                        </div>
+                        <ul class="list-unstyled mb-0 small text-muted">
+                            <li class="mb-2"><strong class="text-dark">İl Başkanı:</strong> <span id="pCardPresident"></span></li>
+                            <li class="mb-2"><strong class="text-dark"><i class="fas fa-phone me-1"></i></strong> <span id="pCardPhone"></span></li>
+                            <li class="mb-2"><strong class="text-dark"><i class="fas fa-envelope me-1"></i></strong> <span id="pCardEmail"></span></li>
+                            <li><strong class="text-dark"><i class="fas fa-building me-1"></i></strong> <span id="pCardAddress"></span></li>
+                        </ul>
+                        <a href="#" id="pCardLink" class="btn btn-sm btn-outline-secondary w-100 mt-3 rounded-pill">İl Sayfasına Git</a>
+                    </div>
+                </div>
+                
+                <div id="provinceNotFound" class="alert alert-warning" style="display:none;">
+                    <i class="fas fa-exclamation-triangle me-2"></i> Seçilen ile ait teşkilat bilgisi henüz sisteme girilmemiştir.
+                </div>
+                
+                <div id="initialProvinceList">
+                    <h5 class="fw-bold text-uppercase mb-3 mt-4 text-muted">Örnek Aktif Teşkilatlar</h5>
+                                        <div class="card border mb-2">
+                        <a href="il-detay.php?id=23" class="text-decoration-none">
+                            <div class="card-body py-2 px-3">
+                                <div class="fw-bold text-dark"><i class="fas fa-map-marker-alt text-yup me-2"></i> Elazığ İl Bşk.</div>
+                                <div class="small text-muted mt-1"><i class="fas fa-user me-1"></i> Rıdvan KARAKAYA</div>
+                            </div>
+                        </a>
+                    </div>
+                                        <div class="card border mb-2">
+                        <a href="il-detay.php?id=34" class="text-decoration-none">
+                            <div class="card-body py-2 px-3">
+                                <div class="fw-bold text-dark"><i class="fas fa-map-marker-alt text-yup me-2"></i> İstanbul İl Bşk.</div>
+                                <div class="small text-muted mt-1"><i class="fas fa-user me-1"></i> Ömer GÜLER</div>
+                            </div>
+                        </a>
+                    </div>
+                                        <div class="card border mb-2">
+                        <a href="il-detay.php?id=42" class="text-decoration-none">
+                            <div class="card-body py-2 px-3">
+                                <div class="fw-bold text-dark"><i class="fas fa-map-marker-alt text-yup me-2"></i> Konya İl Bşk.</div>
+                                <div class="small text-muted mt-1"><i class="fas fa-user me-1"></i> İsa DANIŞAN</div>
+                            </div>
+                        </a>
+                    </div>
+                                    </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="main-footer">
+    <div class="container">
+        <div class="row">
+            <!-- Hakkımızda -->
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                 <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/logo.png" alt="Yeniden Umut Logosu" style="height: 55px; filter: brightness(0) invert(1);"> 
+                </div>
+                <p>Hep beraber inanacaz, birlikte çalışacaz, Türkiye kazanacak. Özgürlük, barış, huzur, refah ve adalet temelinde demokratik, katılımcı ve çözüm odaklı siyasetin kalbi.</p>
+                <div class="mt-4">
+                                        <a href="https://facebook.com/yenidenumutpartisi" class="text-white me-3 fs-5"><i class="fab fa-facebook-f"></i></a>
+                                                            <a href="https://twitter.com/yenidenumutpartisi" class="text-white me-3 fs-5"><i class="fab fa-twitter"></i></a>
+                                                            <a href="https://instagram.com/yenidenumutpartisi.2025" class="text-white me-3 fs-5"><i class="fab fa-instagram"></i></a>
+                                                            <a href="https://youtube.com/yenidenumutpartisi" class="text-white fs-5"><i class="fab fa-youtube"></i></a>
+                                    </div>
+            </div>
+
+            <!-- Hızlı Menü -->
+            <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                <h5 class="footer-title">Kurumsal</h5>
+                <ul class="footer-links">
+                    <li><a href="kurumsal.php">Hakkımızda</a></li>
+                    <li><a href="program.php">Parti Programı</a></li>
+                    <li><a href="tuzuk.php">Parti Tüzüğü</a></li>
+                    <li><a href="baskanliklar.php">Başkanlıklar</a></li>
+                    <li><a href="iller.php">İl Teşkilatları</a></li>
+                    <li><a href="galeri.php">Foto Galeri</a></li>
+                </ul>
+            </div>
+            
+            <!-- Bağlantılar -->
+            <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                <h5 class="footer-title">Kısayollar</h5>
+                <ul class="footer-links">
+                    <li><a href="haberler.php">Haberler</a></li>
+                    <li><a href="baskanliklar.php#genclik-kollari">Gençlik Kolları</a></li>
+                    <li><a href="baskanliklar.php#kadin-kollari">Kadın Kolları</a></li>
+                    <li><a href="iletisim.php">İletişim</a></li>
+                    <li><a href="admin/login.php" target="_blank">Portal Girişi</a></li>
+                </ul>
+            </div>
+
+            <!-- İletişim -->
+            <div class="col-lg-4 col-md-6">
+                <h5 class="footer-title">İletişim Bilgileri</h5>
+                <ul class="footer-links footer-contact">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>BALGAT MAH.CEYHUN ATUF KANSU CAD.NO: 36/6 ÇANKAYA / ANKARA</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>
+                            0533 921 98 68                                                            <br>0544 617 54 29                                                    </span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>info@yenidenumutpartisi.org</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="mb-0">&copy; 2026 Yeniden Umut Partisi. Tüm hakları saklıdır.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Lider Biyografi Modalı -->
+<div class="modal fade" id="leaderModal" tabindex="-1" aria-labelledby="leaderModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-header bg-light border-0">
+        <h5 class="modal-title fw-bold" id="leaderModalLabel">Özgeçmiş</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4">
+        <div class="text-center mb-4">
+            <img src="" id="m-photo" class="rounded-circle border shadow-sm mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+            <h4 id="m-name" class="fw-bold m-0"></h4>
+            <div id="m-title" class="text-turkuaz fw-semibold small"></div>
+            <div id="m-birth" class="text-muted small mt-1"></div>
+        </div>
+        <div class="border-top pt-3">
+            <h6 class="fw-bold mb-2">Biyografi</h6>
+            <p id="m-bio" class="text-muted small lh-lg" style="white-space: pre-line;"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const leaderModal = document.getElementById('leaderModal');
+  if (leaderModal) {
+    leaderModal.addEventListener('show.bs.modal', function (event) {
+      const button = event.relatedTarget;
+      const name = button.getAttribute('data-name');
+      const title = button.getAttribute('data-title');
+      const photo = button.getAttribute('data-photo');
+      const bio = button.getAttribute('data-bio');
+      const birth = button.getAttribute('data-birth');
+
+      leaderModal.querySelector('#m-name').textContent = name;
+      leaderModal.querySelector('#m-title').textContent = title;
+      leaderModal.querySelector('#m-photo').src = photo;
+      leaderModal.querySelector('#m-bio').textContent = bio;
+      leaderModal.querySelector('#m-birth').textContent = birth ? birth : '';
+    });
+  }
+});
+</script>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>
+
+<!-- jQVMap kütüphaneleri -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jquery.vmap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/maps/jquery.vmap.turkey.js"></script>
+
+<script>
+$(document).ready(function() {
+    
+    // Haritayı başlat
+    $('#vmap').vectorMap({
+        map: 'turkey',
+        backgroundColor: '#f8f9fa',
+        color: '#d1d5db',
+        hoverColor: '#14B8A6', // YUP Turkuaz
+        selectedColor: '#0f8a7c',
+        enableZoom: false,
+        showTooltip: true,
+        onRegionClick: function(element, code, region) {
+            // code: plaka kodu gelir örn: "01", "34"
+            let provinceId = parseInt(code, 10);
+            
+            // Select menüsünü de güncelle
+            $('#provinceSelect').val(provinceId);
+            
+            // Ajax ile il bilgisini getir
+            fetchProvinceData(provinceId);
+        }
+    });
+
+    // Select menüsünden seçildiğinde veya butona tıklandığında
+    $('#provinceSelect').on('change', function() {
+        let code = $(this).val();
+        if(code) {
+           let codeStr = code.toString().padStart(2, '0');
+           $('#vmap').vectorMap('set', 'colors', { [codeStr]: '#0f8a7c' });
+           fetchProvinceData(code);
+        }
+    });
+
+    $('#btnFindProvince').on('click', function(){
+        let code = $('#provinceSelect').val();
+        if(code) fetchProvinceData(code);
+    });
+
+    function fetchProvinceData(id) {
+        // İlk listeyi gizle
+        $('#initialProvinceList').hide();
+        
+        $.ajax({
+            url: 'ajax_get_province.php',
+            type: 'GET',
+            data: { id: id },
+            dataType: 'json',
+            success: function(res) {
+                if(res.status === 'success') {
+                    if(res.data.has_contact) {
+                        $('#provinceNotFound').hide();
+                        $('#pCardName').text(res.data.name + ' İl Başkanlığı');
+                        $('#pCardPresident').text(res.data.president_name);
+                        $('#pCardPhone').text(res.data.phone);
+                        $('#pCardEmail').text(res.data.email);
+                        $('#pCardAddress').text(res.data.address);
+                        $('#pCardLink').attr('href', 'il-detay.php?id=' + id);
+                        $('#provinceCard').fadeIn();
+                    } else {
+                        $('#provinceCard').hide();
+                        $('#provinceNotFound').html('<i class="fas fa-info-circle me-2"></i> <strong>' + res.data.name + '</strong> iline ait teşkilat bilgisi atanmamış.').fadeIn();
+                    }
+                } else {
+                    $('#provinceCard').hide();
+                    $('#provinceNotFound').html('<i class="fas fa-exclamation-triangle me-2"></i> Sistemimizde bu ilin yapılandırması henüz bulunmuyor.').fadeIn();
+                }
+            },
+            error: function() {
+                $('#provinceCard').hide();
+                $('#provinceNotFound').html('<i class="fas fa-exclamation-triangle me-2"></i> Bir hata oluştu.').fadeIn();
+            }
+        });
+    }
+});
+</script>
