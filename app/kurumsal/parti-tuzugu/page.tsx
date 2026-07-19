@@ -712,7 +712,7 @@ export default function PartiTuzuguPage() {
     <h4 className="text-lg font-bold mb-3 text-navy">55.5- Parti teşkilatının her kademe kurucu yönetim kurulları ve disiplin kurulu üyelerinden,</h4>
   </div>
   <div className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
-    <p className="text-slate-650 text-sm leading-relaxed">üyeliği devam edenler, kademenin yapılacak ilk olağan kongresinin tabii delegesidirler. MADDE56 Butüzük hükümlerini Genel İdare Kurulu yürütür. MADDE57 Parti kurucuları tarafından onaylanmış olan 54 esas, 1 geçici maddeden ibaret Tüzük, parti kuruluş bildirgesinin İçişleri Bakanlığı’na verilmesiyle yürürlüğe girer. Tüzük değişikliği Kurucular Kurulu’nun veya Büyük Kongrenin kabul ettiği tarihte yürürlüğe girer. Yönetmelikler: 1-Üye Kayıt Yönetmeliği 2-Seçim İşleri Yönetmeliği ); } ); }</p>
+    <p className="text-slate-650 text-sm leading-relaxed">üyeliği devam edenler, kademenin yapılacak ilk olağan kongresinin tabii delegesidirler. MADDE56 Butüzük hükümlerini Genel İdare Kurulu yürütür. MADDE57 Parti kurucuları tarafından onaylanmış olan 54 esas, 1 geçici maddeden ibaret Tüzük, parti kuruluş bildirgesinin İçişleri Bakanlığı’na verilmesiyle yürürlüğe girer. Tüzük değişikliği Kurucular Kurulu’nun veya Büyük Kongrenin kabul ettiği tarihte yürürlüğe girer. Yönetmelikler: 1-Üye Kayıt Yönetmeliği 2-Seçim İşleri Yönetmeliği</p>
   </div>
           </div>
         </div>
